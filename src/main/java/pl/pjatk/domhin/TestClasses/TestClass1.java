@@ -1,11 +1,12 @@
-package pl.pjatk.domhin;
+package pl.pjatk.domhin.TestClasses;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import pl.pjatk.domhin.TestClasses.model.POJOTest;
 
-@Component
+@Service
 public class TestClass1 {
 
     private String name;

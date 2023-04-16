@@ -1,4 +1,4 @@
-package pl.pjatk.domhin;
+package pl.pjatk.domhin.Example.model;
 
 public class Car {
 

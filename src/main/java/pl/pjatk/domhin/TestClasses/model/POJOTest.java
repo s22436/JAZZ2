@@ -1,4 +1,4 @@
-package pl.pjatk.domhin;
+package pl.pjatk.domhin.TestClasses.model;
 
 public class POJOTest {
     private int someNum;

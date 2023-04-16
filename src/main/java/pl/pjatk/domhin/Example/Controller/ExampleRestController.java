@@ -1,7 +1,8 @@
-package pl.pjatk.domhin;
+package pl.pjatk.domhin.Example.Controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.pjatk.domhin.Example.model.Car;
 
 @RestController
 @RequestMapping("/test")

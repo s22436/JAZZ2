@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="testClass1" class="pl.pjatk.domhin.TestClass1">
+    <bean id="testClass1" class="pl.pjatk.domhin.TestClasses.TestClass1">
         <property name="name" value="xml default value" />
     </bean>
 

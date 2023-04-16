@@ -1,10 +1,10 @@
-package pl.pjatk.domhin;
+package pl.pjatk.domhin.TestClasses;
 
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class TestClass3 {
 
     public TestClass3(ApplicationContext applicationContext){
