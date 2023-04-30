@@ -1,7 +1,0 @@
-my:
-  custom:
-    property: "Hello from application properties"
-should:
-  create:
-    important:
-      bean: "true"
