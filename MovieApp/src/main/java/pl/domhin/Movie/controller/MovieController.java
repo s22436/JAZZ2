@@ -4,6 +4,7 @@ package pl.domhin.Movie.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.domhin.Movie.model.AvailableMovieUpdateRequest;
 import pl.domhin.Movie.model.Movie;
 import pl.domhin.Movie.service.MovieService;
 
@@ -25,7 +26,7 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Movie> getMovie(@PathVariable String id){
+    public ResponseEntity<Movie> getMovie(@PathVariable Integer id){
         Movie movie = movieService.getMovie(id);
         if(movie == null){
             throw new NullPointerException("MOVIE NOT FOUND");
@@ -44,7 +45,7 @@ public class MovieController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Movie> updateMove(@RequestBody Movie movie, @PathVariable String id) {
+    public ResponseEntity<Movie> updateMove(@RequestBody Movie movie, @PathVariable Integer id) {
         Movie movieToUpdate = movieService.getMovie(id);
         if(movieToUpdate == null){
             throw new RuntimeException("MOVIE NOT FOUND");
@@ -56,14 +57,22 @@ public class MovieController {
 
     }
 
+    @PutMapping("/change-available/{id}")
+    public ResponseEntity<Movie> updateMoveAvailable(@RequestBody AvailableMovieUpdateRequest updatedValue, @PathVariable Integer id) {
+        Movie m = movieService.changeMovieAvailable(id, updatedValue.getIsAvailable());
+
+        return ResponseEntity.ok(m);
+
+    }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable String id) {
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
         Movie movieToUpdate = movieService.getMovie(id);
         if(movieToUpdate == null){
             throw new RuntimeException("MOVIE NOT FOUND");
         }
 
-        movieService.removeMovie(id);
+//        movieService.removeMovie(id);
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 

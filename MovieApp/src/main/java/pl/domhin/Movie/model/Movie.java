@@ -1,13 +1,27 @@
 package pl.domhin.Movie.model;
 
+import jakarta.persistence.*;
+
+
+@Entity(name = "MOVIES")
+@Table(name = "MOVIES")
 public class Movie {
+    @Column(name = "NAZWA")
     private String name;
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(name = "KATEGORIA")
     private String category;
 
-    public Movie(String name, String id, String category) {
+    @Column(name = "isAvailable")
+    private boolean isAvailable;
+
+    public Movie(){
+
+    }
+    public Movie(String name, String category) {
         this.name = name;
-        this.id = id;
         this.category = category;
     }
 
@@ -19,12 +33,8 @@ public class Movie {
         this.name = name;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getCategory() {
@@ -33,6 +43,14 @@ public class Movie {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
     public void update(Movie movie){
@@ -44,8 +62,9 @@ public class Movie {
     public String toString() {
         return "Movie{" +
                 "name='" + name + '\'' +
-                ", id='" + id + '\'' +
+                ", id=" + id +
                 ", category='" + category + '\'' +
+                ", isAvailable=" + isAvailable +
                 '}';
     }
 }
