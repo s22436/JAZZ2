@@ -3,7 +3,6 @@ Rbd
 
 Logowanie do bazy na szuflandii:
 mysql -u s22436 -p
-Dom.Hinc <-hasło 
 
 Listowanie baz:
 show databases -> pokazuje wszystkie bazy danych
